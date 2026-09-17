@@ -52,7 +52,8 @@ The live source page could not be fetched from the build environment (outbound a
   0% interest plans and the FAQ answers.
 - Brand guideline PDF (`Carvalho Roth Ortho - Brand Guideline.pdf`): colors `#2d9684`, `#9acdc3`, `#c9e1ed`,
   `#1e1e1e`, `#ffffff`; fonts Trocchi (display) and Helvetica (body).
-- Photos from the client's Drive `Pictures` folder (doctors, patients, Northborough office) and `Logo Files`.
+- Photos from the client's Drive `Pictures` folder (patients, Northborough office) and `Logo Files`.
+- Doctor portraits, the three-doctor hero composite and Dr. Matthew Evers' bio were supplied by the client team.
 
 The phone number `508-684-2266` was supplied by the client team for this page. Items to confirm against the
 live page before launch: the email (the main website lists `info@carortho.com`; the landing page used
