@@ -364,13 +364,13 @@ h3 { font-size: 1.2rem; }
 @media (min-width: 560px) { .cta-band .cta-row .btn { width: auto; } }
 
 /* ---------- Doctors ---------- */
-.doctors { display: grid; gap: 22px; grid-template-columns: 1fr; }
+.doctors { display: grid; gap: 22px; grid-template-columns: 1fr; max-width: 980px; margin: 0 auto; }
 .doctor {
   border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);
   border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(23, 92, 80, 0.08);
   display: grid; grid-template-columns: 1fr;
 }
-.doctor__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.doctor__photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; }
 .doctor__body { padding: 24px; }
 .doctor__body h3 { font-size: 1.45rem; margin-bottom: 4px; }
 .doctor__cred {
@@ -380,13 +380,12 @@ h3 { font-size: 1.2rem; }
 .doctor__body p { color: var(--muted); font-size: 0.97rem; }
 .doctor__body p:last-child { margin-bottom: 0; }
 @media (min-width: 560px) {
-  .doctor { grid-template-columns: 200px 1fr; }
+  .doctor { grid-template-columns: 220px 1fr; }
   .doctor__photo img { height: 100%; aspect-ratio: auto; }
 }
 @media (min-width: 900px) {
-  .doctors { grid-template-columns: 1fr 1fr; }
-  .doctor { grid-template-columns: 1fr; }
-  .doctor__photo img { aspect-ratio: 1 / 1; object-position: center top; height: auto; }
+  .doctor { grid-template-columns: 260px 1fr; }
+  .doctor__body { padding: 30px 32px; }
 }
 
 /* ---------- Reviews ---------- */
