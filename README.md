@@ -44,7 +44,7 @@ The live source page could not be fetched from the build environment (outbound a
 
 - The practice's own SmileHub landing page screenshots in the agency Google Drive
   (`Carvalho and Roth Orthodontics / Landing Page / LP 1–3.png`): doctor names, credentials and bios (verbatim),
-  both testimonials (verbatim, no names or star ratings were shown), phone `508-546-9637`,
+  both testimonials (verbatim, no names or star ratings were shown),
   email `info@bracesonline.com`, all four office addresses, "Massachusetts' Favorite Orthodontists",
   "Schedule A Visit With Your … Orthodontists Today!" and its supporting sentence.
 - The practice website's airway orthodontics page and FAQ page (`bracesonline.com`), for the airway
@@ -54,7 +54,7 @@ The live source page could not be fetched from the build environment (outbound a
   `#1e1e1e`, `#ffffff`; fonts Trocchi (display) and Helvetica (body).
 - Photos from the client's Drive `Pictures` folder (doctors, patients, Northborough office) and `Logo Files`.
 
-Items to confirm against the live page before launch: the phone number (the main website lists
-`(508) 485-8788` and `info@carortho.com`; the landing page used `508-546-9637` and `info@bracesonline.com`),
-and whether the live page still shows the earlier "$500 Off Invisalign or Braces + Free Teeth Whitening" offer,
+The phone number `508-684-2266` was supplied by the client team for this page. Items to confirm against the
+live page before launch: the email (the main website lists `info@carortho.com`; the landing page used
+`info@bracesonline.com`), and whether the live page still shows the earlier "$500 Off Invisalign or Braces + Free Teeth Whitening" offer,
 which was deliberately left out because it could not be verified.
