@@ -249,8 +249,7 @@ h3 { font-size: 1.2rem; }
 }
 @media (min-width: 900px) {
   .hero { padding: 64px 0 80px; }
-  .hero__grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
-  .hero__ctas--desktop-hide { display: none; }
+  .hero__grid { grid-template-columns: 1.08fr 0.92fr; gap: 48px; }
   .hero__card { left: 22px; right: 22px; bottom: 22px; }
 }
 
@@ -502,6 +501,35 @@ h3 { font-size: 1.2rem; }
 .how-list { display: grid; gap: 10px; margin: 16px 0 20px; }
 .how-list li { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; }
 .how-list svg { width: 22px; height: 22px; flex: none; color: var(--primary); margin-top: 1px; }
+
+/* ---------- Final CTA with inline form ---------- */
+.cta-band--form { padding: 72px 0; }
+.cta-band--form .split { align-items: center; }
+.cta-band--form .split__copy p { color: rgba(255, 255, 255, 0.9); }
+.eyebrow--light { color: rgba(255, 255, 255, 0.85); }
+.eyebrow--light::before { background: rgba(255, 255, 255, 0.7); }
+.lead-card--solid { background: #fff; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); }
+.cta-band--form .lead-card h2 { color: var(--text); font-size: 1.4rem; }
+
+/* ---------- Booking popup ---------- */
+.modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; }
+.modal[data-open="true"] { display: flex; }
+.modal__backdrop { position: absolute; inset: 0; background: rgba(23, 45, 41, 0.55); }
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .modal__backdrop { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+}
+.modal__panel {
+  position: relative; width: 100%; max-width: 540px; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto;
+  border-radius: var(--radius-lg); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+.modal__panel .lead-card { border-radius: var(--radius-lg); padding-top: 28px; }
+.modal__panel .lead-card h2 { padding-right: 44px; }
+.modal__close {
+  position: absolute; top: 12px; right: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%;
+  border: 0; background: rgba(30, 30, 30, 0.06); cursor: pointer; display: grid; place-items: center; color: var(--text);
+}
+.modal__close:hover { background: rgba(30, 30, 30, 0.12); }
+.modal__close svg { width: 20px; height: 20px; }
 
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }

@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap">
 
+  <link rel="preload" as="image" href="assets/images/doctors-hero.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.remove('no-js');</script>
 
@@ -33,11 +34,12 @@
 
   <!--
     LEAD FORM WIRING
-    The form below mirrors the source page's fields (First Name, Last Name, Email, Phone,
-    Location Preference, consent). Set data-form-action on <form id="lead-form"> to the
-    SmileHub endpoint. Until it is set, submitting shows the phone fallback instead of
-    pretending to succeed. Alternatively add data-booking-url="https://..." to this <body>
-    tag to send every "Book Complimentary Consultation" CTA to an external URL.
+    The page has two copies of the same lead form (fields mirror the source page: First Name,
+    Last Name, Email, Phone, Location Preference, consent): one in the booking popup and one
+    inline in the final section. Set data-form-action on BOTH <form> tags to the SmileHub
+    endpoint. Until it is set, submitting shows the phone fallback instead of pretending to
+    succeed. Alternatively add data-booking-url="https://..." to this <body> tag to send every
+    "Book Complimentary Consultation" CTA to an external URL instead of opening the popup.
   -->
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,7 +58,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
           Call 508-684-2266
         </a>
-        <a id="header-book-consultation" class="btn btn--primary btn--sm" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
+        <a id="header-book-consultation" class="btn btn--primary btn--sm" data-conversion="booking" href="#lead-form" aria-haspopup="dialog">Book Complimentary Consultation</a>
       </div>
     </div>
   </header>
@@ -73,7 +75,7 @@
           <p class="hero__lead">Start with a complimentary airway consultation and discover how early airway treatment can give your child peaceful nights, healthy growth, and lasting confidence.</p>
 
           <div class="cta-row hero__ctas">
-            <a id="hero-book-consultation" class="btn btn--primary btn--lg hero__ctas--desktop-hide" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
+            <a id="hero-book-consultation" class="btn btn--primary btn--lg" data-conversion="booking" href="#lead-form" aria-haspopup="dialog">Book Complimentary Consultation</a>
             <a id="hero-phone" class="btn btn--secondary btn--lg" data-conversion="phone" href="tel:+15086842266">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
               Call 508-684-2266
@@ -87,49 +89,20 @@
           </ul>
         </div>
 
-        <div class="hero__form">
-          <!-- Fields mirror the source landing page form exactly. -->
-          <form id="lead-form" class="lead-card glass lead-form" method="post" action="#lead-form" data-form-action="">
-            <h2 id="form-title">Book Your Complimentary Airway Consultation</h2>
-            <p>Find out if airway orthodontics is right for your child or for you.</p>
-            <div class="form-grid">
-              <div class="form-grid form-grid--2">
-                <div class="field">
-                  <label for="first-name">First Name <span aria-hidden="true">*</span></label>
-                  <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
-                  <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
-                </div>
-              </div>
-              <div class="field">
-                <label for="email">Email <span aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-              </div>
-              <div class="field">
-                <label for="phone">Phone <span aria-hidden="true">*</span></label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-              </div>
-              <div class="field">
-                <label for="location">Location Preference <span aria-hidden="true">*</span></label>
-                <select id="location" name="location_preference" required>
-                  <option value="" selected disabled>Select an office</option>
-                  <option value="Marlborough">Marlborough</option>
-                  <option value="Northborough">Northborough</option>
-                  <option value="Newton Centre">Newton Centre</option>
-                  <option value="Worcester">Worcester</option>
-                </select>
-              </div>
-              <label class="consent">
-                <input type="checkbox" name="consent" value="yes" required>
-                <span>I agree to <a href="https://www.bracesonline.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business.</span>
-              </label>
-              <button id="form-submit" class="btn btn--primary btn--lg" type="submit" data-conversion="form-submit">Book Complimentary Consultation</button>
-              <p id="form-notice" class="form-notice" tabindex="-1" role="status">Online booking is being connected. Please call <a href="tel:+15086842266">508-684-2266</a> to book your complimentary consultation.</p>
+        <div class="hero__visual">
+          <picture>
+            <source type="image/webp" srcset="assets/images/doctors-hero.webp">
+            <img class="hero__img" src="assets/images/doctors-hero.jpg" width="504" height="493" alt="Dr. Roberto S. Carvalho, Dr. Menachem D. Roth and Dr. Matthew Evers of Carvalho &amp; Roth Orthodontics" fetchpriority="high" decoding="async">
+          </picture>
+          <div class="hero__card glass">
+            <div class="hero__card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
             </div>
-          </form>
-          <!-- The source page also shows a practice video beside the form. Add the video embed here when the file is available. -->
+            <div>
+              <strong>Dr. Carvalho, Dr. Roth &amp; Dr. Evers</strong>
+              <span>Your airway orthodontists for children &amp; adults</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -137,10 +110,10 @@
     <!-- ================= ABOUT THE PRACTICE ================= -->
     <section class="section section--white" aria-labelledby="about-title">
       <div class="container split split--media-left">
-        <div class="split__media split__media--natural reveal">
+        <div class="split__media reveal">
           <picture>
-            <source type="image/webp" srcset="assets/images/doctors-hero.webp">
-            <img src="assets/images/doctors-hero.jpg" width="504" height="493" alt="Dr. Roberto S. Carvalho, Dr. Menachem D. Roth and Dr. Matthew Evers of Carvalho &amp; Roth Orthodontics" loading="lazy" decoding="async">
+            <source type="image/webp" srcset="assets/images/patient-1.webp">
+            <img src="assets/images/patient-1.jpg" width="720" height="720" alt="A Carvalho &amp; Roth patient holding a sign that reads &ldquo;Rockin&rsquo; my new smile!&rdquo;" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="split__copy reveal">
@@ -176,7 +149,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Creating confident, healthy smiles</li>
           </ul>
           <div class="cta-row">
-            <a id="airway-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
+            <a id="airway-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form" aria-haspopup="dialog">Book Complimentary Consultation</a>
           </div>
         </div>
         <div class="split__media reveal">
@@ -222,7 +195,7 @@
         <h2 id="mid-cta-title">Level Up Your Smile Today!</h2>
         <p>Ready to level up your smile and confidence? Our team is here to help and we can&rsquo;t wait to meet you! Get started with your free airway consultation.</p>
         <div class="cta-row">
-          <a id="mid-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
+          <a id="mid-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#lead-form" aria-haspopup="dialog">Book Complimentary Consultation</a>
           <a id="mid-phone" class="btn btn--ghost-light btn--lg" data-conversion="phone" href="tel:+15086842266">Call 508-684-2266</a>
         </div>
       </div>
@@ -409,14 +382,59 @@
       </div>
     </section>
 
-    <!-- ================= FINAL CTA ================= -->
-    <section class="cta-band" id="final-cta" aria-labelledby="final-cta-title">
-      <div class="container cta-band__inner reveal">
-        <h2 id="final-cta-title">Airway Orthodontics in Massachusetts: Better Sleep Starts with Better Breathing</h2>
-        <p>Start with a complimentary airway consultation and discover how early airway treatment can give your child peaceful nights, healthy growth, and lasting confidence.</p>
-        <div class="cta-row">
-          <a id="final-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
-          <a id="final-phone" class="btn btn--ghost-light btn--lg" data-conversion="phone" href="tel:+15086842266">Call Now: 508-684-2266</a>
+    <!-- ================= FINAL CTA + FORM ================= -->
+    <section class="cta-band cta-band--form" id="final-cta" aria-labelledby="final-cta-title">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <span class="eyebrow eyebrow--light">Complimentary airway consultation</span>
+          <h2 id="final-cta-title">Airway Orthodontics in Massachusetts: Better Sleep Starts with Better Breathing</h2>
+          <p>Start with a complimentary airway consultation and discover how early airway treatment can give your child peaceful nights, healthy growth, and lasting confidence.</p>
+          <p>Prefer to talk? Call us and we&rsquo;ll get you booked.</p>
+          <div class="cta-row">
+            <a id="final-phone" class="btn btn--ghost-light btn--lg" data-conversion="phone" href="tel:+15086842266">Call Now: 508-684-2266</a>
+          </div>
+        </div>
+        <div class="split__media reveal">
+          <form id="lead-form" class="lead-card lead-form lead-card--solid" method="post" action="#lead-form" data-form-action="">
+            <h2 id="form-title">Book Your Complimentary Airway Consultation</h2>
+            <p>Find out if airway orthodontics is right for your child or for you.</p>
+            <div class="form-grid">
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+                  <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+                  <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone <span aria-hidden="true">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              </div>
+              <div class="field">
+                <label for="location">Location Preference <span aria-hidden="true">*</span></label>
+                <select id="location" name="location_preference" required>
+                  <option value="" selected disabled>Select an office</option>
+                  <option value="Marlborough">Marlborough</option>
+                  <option value="Northborough">Northborough</option>
+                  <option value="Newton Centre">Newton Centre</option>
+                  <option value="Worcester">Worcester</option>
+                </select>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span>I agree to <a href="https://www.bracesonline.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business.</span>
+              </label>
+              <button id="form-submit" class="btn btn--primary btn--lg" type="submit" data-conversion="form-submit">Book Complimentary Consultation</button>
+              <p class="form-notice" tabindex="-1" role="status">Online booking is being connected. Please call <a href="tel:+15086842266">508-684-2266</a> to book your complimentary airway consultation.</p>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -439,8 +457,58 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
       Call Now
     </a>
-    <a id="sticky-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form">Book Consultation</a>
+    <a id="sticky-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form" aria-haspopup="dialog">Book Consultation</a>
   </nav>
+
+  <!-- ================= BOOKING POPUP ================= -->
+  <div id="booking-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="form-title-modal" aria-hidden="true" data-open="false">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <form id="lead-form-modal" class="lead-card lead-form lead-card--solid" method="post" action="#lead-form-modal" data-form-action="">
+            <h2 id="form-title-modal">Book Your Complimentary Airway Consultation</h2>
+            <p>Find out if airway orthodontics is right for your child or for you.</p>
+            <div class="form-grid">
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label for="first-name-modal">First Name <span aria-hidden="true">*</span></label>
+                  <input id="first-name-modal" name="first_name" type="text" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="last-name-modal">Last Name <span aria-hidden="true">*</span></label>
+                  <input id="last-name-modal" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="email-modal">Email <span aria-hidden="true">*</span></label>
+                <input id="email-modal" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field">
+                <label for="phone-modal">Phone <span aria-hidden="true">*</span></label>
+                <input id="phone-modal" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              </div>
+              <div class="field">
+                <label for="location-modal">Location Preference <span aria-hidden="true">*</span></label>
+                <select id="location-modal" name="location_preference" required>
+                  <option value="" selected disabled>Select an office</option>
+                  <option value="Marlborough">Marlborough</option>
+                  <option value="Northborough">Northborough</option>
+                  <option value="Newton Centre">Newton Centre</option>
+                  <option value="Worcester">Worcester</option>
+                </select>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span>I agree to <a href="https://www.bracesonline.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business.</span>
+              </label>
+              <button id="form-submit-modal" class="btn btn--primary btn--lg" type="submit" data-conversion="form-submit">Book Complimentary Consultation</button>
+              <p class="form-notice" tabindex="-1" role="status">Online booking is being connected. Please call <a href="tel:+15086842266">508-684-2266</a> to book your complimentary airway consultation.</p>
+            </div>
+          </form>
+    </div>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>

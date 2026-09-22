@@ -12,14 +12,16 @@ assets/images/   (optimized WebP + JPEG/PNG fallbacks, favicon)
 
 ## Wiring the lead form and booking CTAs
 
-The source page uses an embedded lead form (First Name, Last Name, Email, Phone, Location Preference,
-consent checkbox). The hero form here has exactly those fields.
+The source page uses a lead form with First Name, Last Name, Email, Phone, Location Preference and a consent
+checkbox. This page has two copies of that form with exactly those fields: one in the booking popup (opened
+by every "Book Complimentary Consultation" CTA) and one inline in the final section at the bottom of the page.
 
-1. **Connect the form:** set `data-form-action="https://…"` on `<form id="lead-form">` to the SmileHub
-   endpoint. Until it is set, submitting shows a phone fallback instead of pretending to succeed.
-2. Every "Book Complimentary Consultation" CTA scrolls to the form and focuses the first field. To send the
-   CTAs to an external URL instead, add `data-booking-url="https://…"` to the `<body>` tag.
-3. The source page shows a practice video beside the form. A commented slot is left in the hero for it.
+1. **Connect the forms:** set `data-form-action="https://…"` on both `<form id="lead-form">` and
+   `<form id="lead-form-modal">` to the SmileHub endpoint. Until it is set, submitting shows a phone
+   fallback instead of pretending to succeed.
+2. To send the CTAs to an external URL instead of opening the popup, add `data-booking-url="https://…"`
+   to the `<body>` tag. Without JavaScript the CTAs fall back to the inline form.
+3. The source page shows a practice video. Add the embed where it fits once the file is available.
 
 ## Tracking hooks
 
@@ -29,7 +31,7 @@ Conversion elements carry stable IDs and `data-conversion` attributes:
 | --- | --- | --- |
 | Header booking / phone | `header-book-consultation`, `header-phone` | booking / phone |
 | Hero booking (mobile) / phone | `hero-book-consultation`, `hero-phone` | booking / phone |
-| Lead form submit | `form-submit` | form-submit |
+| Lead form submit (inline / popup) | `form-submit`, `form-submit-modal` | form-submit |
 | Airway section booking | `airway-book-consultation` | booking |
 | Mid-page booking / phone | `mid-book-consultation`, `mid-phone` | booking / phone |
 | Contact block phone / email | `contact-phone`, `contact-email` | phone / email |
