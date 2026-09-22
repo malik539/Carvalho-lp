@@ -204,6 +204,7 @@ h3 { font-size: 1.2rem; }
 .hero__copy { max-width: 620px; }
 .hero__title { margin-bottom: 14px; }
 .hero__title em { font-style: normal; color: var(--primary-deep); }
+.hero__sub { font-size: 1.15rem; font-weight: 700; color: var(--primary-ink); margin-bottom: 14px; }
 .hero__lead { font-size: 1.08rem; color: var(--muted); margin-bottom: 18px; }
 
 .offer-pill {
