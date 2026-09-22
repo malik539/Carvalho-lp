@@ -10,15 +10,16 @@ assets/js/main.js
 assets/images/   (optimized WebP + JPEG/PNG fallbacks, favicon)
 ```
 
-## Wiring the "Book Complimentary Consultation" CTA
+## Wiring the lead form and booking CTAs
 
-The current landing page opens its lead form in a SmileHub popup. This page reproduces that behaviour with an
-accessible modal, and every booking CTA (`[data-conversion="booking"]`) opens it. Choose one of:
+The source page uses an embedded lead form (First Name, Last Name, Email, Phone, Location Preference,
+consent checkbox). The hero form here has exactly those fields.
 
-1. **Popup form (matches the current page):** paste the SmileHub form embed code inside
-   `<div id="booking-embed">` in `index.html`. The phone/email fallback inside the modal hides automatically.
-2. **Direct link:** add `data-booking-url="https://…"` to the `<body>` tag. Every booking CTA becomes a plain link
-   to that URL and the modal is bypassed.
+1. **Connect the form:** set `data-form-action="https://…"` on `<form id="lead-form">` to the SmileHub
+   endpoint. Until it is set, submitting shows a phone fallback instead of pretending to succeed.
+2. Every "Book Complimentary Consultation" CTA scrolls to the form and focuses the first field. To send the
+   CTAs to an external URL instead, add `data-booking-url="https://…"` to the `<body>` tag.
+3. The source page shows a practice video beside the form. A commented slot is left in the hero for it.
 
 ## Tracking hooks
 
@@ -27,35 +28,29 @@ Conversion elements carry stable IDs and `data-conversion` attributes:
 | Element | ID | data-conversion |
 | --- | --- | --- |
 | Header booking / phone | `header-book-consultation`, `header-phone` | booking / phone |
-| Hero booking / phone | `hero-book-consultation`, `hero-phone` | booking / phone |
+| Hero booking (mobile) / phone | `hero-book-consultation`, `hero-phone` | booking / phone |
+| Lead form submit | `form-submit` | form-submit |
+| Airway section booking | `airway-book-consultation` | booking |
 | Mid-page booking / phone | `mid-book-consultation`, `mid-phone` | booking / phone |
 | Contact block phone / email | `contact-phone`, `contact-email` | phone / email |
 | Final booking / phone | `final-book-consultation`, `final-phone` | booking / phone |
 | Sticky mobile bar | `sticky-book-consultation`, `sticky-phone` | booking / phone |
-| Modal fallback | `modal-phone`, `modal-email` | phone / email |
 
 GTM / Google Ads script placeholders are marked with comments in `<head>` and right after `<body>`.
 No conversion IDs are included.
 
 ## Content sources
 
-The live source page could not be fetched from the build environment (outbound access to
-`smilehub.bracesonline.com` and `bracesonline.com` is blocked by network policy). Content was taken only from:
+All copy comes from the airway-campaign landing page export supplied by the client team
+(`Carvalho & Roth Orthodontics.md`): headline, subhead, form fields and consent text, About the Practice,
+What Is Airway Orthodontics, Why Families Trust Us, the "Level Up Your Smile Today!" CTA, all three doctor
+bios, the five FAQ questions, both named reviews, phone `508-684-2266`, email `info@bracesonline.com`,
+the four office addresses and their map images. Dr. Evers' portrait and the tired-child image are from
+the same export; the Dr. Carvalho, Dr. Roth and three-doctor hero photos were supplied separately.
 
-- The practice's own SmileHub landing page screenshots in the agency Google Drive
-  (`Carvalho and Roth Orthodontics / Landing Page / LP 1–3.png`): doctor names, credentials and bios (verbatim),
-  both testimonials (verbatim, no names or star ratings were shown),
-  email `info@bracesonline.com`, all four office addresses, "Massachusetts' Favorite Orthodontists",
-  "Schedule A Visit With Your … Orthodontists Today!" and its supporting sentence.
-- The practice website's airway orthodontics page and FAQ page (`bracesonline.com`), for the airway
-  explanation, signs, treatment approaches, "why families trust us" wording, the complimentary first visit,
-  0% interest plans and the FAQ answers.
-- Brand guideline PDF (`Carvalho Roth Ortho - Brand Guideline.pdf`): colors `#2d9684`, `#9acdc3`, `#c9e1ed`,
-  `#1e1e1e`, `#ffffff`; fonts Trocchi (display) and Helvetica (body).
-- Photos from the client's Drive `Pictures` folder (patients, Northborough office) and `Logo Files`.
-- Doctor portraits, the three-doctor hero composite and Dr. Matthew Evers' bio were supplied by the client team.
+Brand colors and fonts come from the practice brand guideline PDF (`#2d9684`, `#9acdc3`, `#c9e1ed`,
+`#1e1e1e`, `#ffffff`; Trocchi and Helvetica). Logo files come from the client's Drive.
 
-The phone number `508-684-2266` was supplied by the client team for this page. Items to confirm against the
-live page before launch: the email (the main website lists `info@carortho.com`; the landing page used
-`info@bracesonline.com`), and whether the live page still shows the earlier "$500 Off Invisalign or Braces + Free Teeth Whitening" offer,
-which was deliberately left out because it could not be verified.
+**To confirm before launch:** the export contained the five FAQ questions but not their answers, so the
+answers on this page were written only from sentences elsewhere on the same page. Replace them with the
+live page's answers if they differ.

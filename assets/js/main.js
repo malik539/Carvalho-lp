@@ -7,70 +7,38 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ------------------------------------------------------------------
-     Booking CTAs
-     The source landing page opens its "Book Complimentary Consultation"
-     lead form in a popup. Two ways to wire the real form here:
-       1. Paste the SmileHub form embed inside #booking-embed (index.html), or
-       2. Set data-booking-url on <body> to send every booking CTA to a URL.
+     Booking CTAs → scroll to the lead form (same behaviour as the source
+     page, where "Book Complimentary Consultation" leads to the form).
+     Set data-booking-url on <body> to send every booking CTA to a URL instead.
      ------------------------------------------------------------------ */
+  var form = document.getElementById('lead-form');
   var bookingUrl = (document.body.getAttribute('data-booking-url') || '').trim();
   var bookingLinks = document.querySelectorAll('[data-conversion="booking"]');
-  var modal = document.getElementById('booking-modal');
-  var lastFocused = null;
 
-  if (bookingUrl) {
-    Array.prototype.forEach.call(bookingLinks, function (a) {
-      a.setAttribute('href', bookingUrl);
-      a.removeAttribute('aria-haspopup');
+  Array.prototype.forEach.call(bookingLinks, function (a) {
+    if (bookingUrl) { a.setAttribute('href', bookingUrl); return; }
+    if (!form) return;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      form.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      var first = form.querySelector('input, select');
+      if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduceMotion ? 0 : 450);
     });
-  } else if (modal) {
-    Array.prototype.forEach.call(bookingLinks, function (a) {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
-      });
-    });
-  }
+  });
 
-  function focusableIn(el) {
-    return el.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, iframe, [tabindex]:not([tabindex="-1"])');
-  }
-
-  function openModal() {
-    lastFocused = document.activeElement;
-    modal.setAttribute('data-open', 'true');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    var sticky = document.getElementById('sticky-cta');
-    if (sticky) sticky.setAttribute('data-hidden', 'true');
-    var first = modal.querySelector('.modal__close');
-    if (first) first.focus();
-    document.addEventListener('keydown', onModalKey);
-  }
-
-  function closeModal() {
-    modal.setAttribute('data-open', 'false');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    var sticky = document.getElementById('sticky-cta');
-    if (sticky) sticky.removeAttribute('data-hidden');
-    document.removeEventListener('keydown', onModalKey);
-    if (lastFocused && lastFocused.focus) lastFocused.focus();
-  }
-
-  function onModalKey(e) {
-    if (e.key === 'Escape') { closeModal(); return; }
-    if (e.key !== 'Tab') return;
-    var items = focusableIn(modal);
-    if (!items.length) return;
-    var first = items[0], last = items[items.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  }
-
-  if (modal) {
-    Array.prototype.forEach.call(modal.querySelectorAll('[data-modal-close]'), function (el) {
-      el.addEventListener('click', closeModal);
+  /* ------------------------------------------------------------------
+     Lead form
+     The source page submits to SmileHub. Put that endpoint in
+     data-form-action on the <form>; until it is set, the form does not
+     pretend to submit and instead shows the phone fallback.
+     ------------------------------------------------------------------ */
+  if (form) {
+    var notice = document.getElementById('form-notice');
+    form.addEventListener('submit', function (e) {
+      var action = (form.getAttribute('data-form-action') || '').trim();
+      if (action) { form.setAttribute('action', action); return; }
+      e.preventDefault();
+      if (notice) { notice.setAttribute('data-show', 'true'); notice.focus(); }
     });
   }
 
@@ -86,8 +54,7 @@
     panel.hidden = !open;
 
     btn.addEventListener('click', function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      setPanel(btn, panel, !expanded);
+      setPanel(btn, panel, btn.getAttribute('aria-expanded') !== 'true');
     });
 
     btn.addEventListener('keydown', function (e) {
@@ -104,7 +71,6 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) {
       panel.hidden = false;
-      // next frame so the grid transition can run
       requestAnimationFrame(function () { panel.setAttribute('data-open', 'true'); });
     } else {
       panel.setAttribute('data-open', 'false');
@@ -133,19 +99,18 @@
   }
 
   /* ------------------------------------------------------------------
-     Sticky mobile CTA: hide while the final CTA section is in view
-     so the bar never covers its own buttons.
+     Sticky mobile CTA: hide while the lead form or the final CTA is in
+     view so the bar never covers its own conversion controls.
      ------------------------------------------------------------------ */
   var sticky = document.getElementById('sticky-cta');
-  var finalCta = document.getElementById('final-cta');
-  if (sticky && finalCta && 'IntersectionObserver' in window) {
+  if (sticky && 'IntersectionObserver' in window) {
+    var watched = [form, document.getElementById('final-cta')].filter(Boolean);
+    var visible = {};
     var stickyIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (modal && modal.getAttribute('data-open') === 'true') return;
-        if (entry.isIntersecting) sticky.setAttribute('data-hidden', 'true');
-        else sticky.removeAttribute('data-hidden');
-      });
-    }, { threshold: 0.35 });
-    stickyIo.observe(finalCta);
+      entries.forEach(function (entry) { visible[entry.target.id] = entry.isIntersecting; });
+      var anyVisible = Object.keys(visible).some(function (k) { return visible[k]; });
+      if (anyVisible) sticky.setAttribute('data-hidden', 'true'); else sticky.removeAttribute('data-hidden');
+    }, { threshold: 0.25 });
+    watched.forEach(function (el) { stickyIo.observe(el); });
   }
 })();

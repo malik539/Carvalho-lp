@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Book a Complimentary Consultation | Carvalho &amp; Roth Orthodontics</title>
-  <meta name="description" content="Harvard-trained orthodontists Dr. Roberto S. Carvalho and Dr. Menachem D. Roth. Airway orthodontics for children and adults in Marlborough, Northborough, Newton Centre and Worcester, MA. Your first visit is completely complimentary.">
+  <title>Better Sleep Starts with Better Breathing | Carvalho &amp; Roth Orthodontics</title>
+  <meta name="description" content="Airway-focused orthodontic care from the Harvard-trained, doctor-owned team at Carvalho &amp; Roth Orthodontics. Four Massachusetts locations. Start with a complimentary consultation.">
   <meta name="robots" content="noindex, follow">
   <!-- Canonical: replace with the final published URL of this landing page -->
   <link rel="canonical" href="https://smilehub.bracesonline.com/best-offer">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Book a Complimentary Consultation | Carvalho &amp; Roth Orthodontics">
-  <meta property="og:description" content="Harvard-trained orthodontists for children and adults. Airway orthodontics in Marlborough, Northborough, Newton Centre and Worcester, MA.">
+  <meta property="og:title" content="Better Sleep Starts with Better Breathing | Carvalho &amp; Roth Orthodontics">
+  <meta property="og:description" content="Airway-focused orthodontic care from a Harvard-trained, doctor-owned team. Four Massachusetts locations. Complimentary consultation.">
   <meta property="og:image" content="assets/images/doctors-hero.jpg">
   <meta name="theme-color" content="#2d9684">
 
@@ -23,7 +23,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap">
 
-  <link rel="preload" as="image" href="assets/images/doctors-hero.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.remove('no-js');</script>
 
@@ -33,11 +32,12 @@
   <!-- Google Tag Manager (noscript) can be inserted here (immediately after the opening body tag) -->
 
   <!--
-    BOOKING CTA WIRING
-    The current landing page opens its "Book Complimentary Consultation" form in a popup.
-    Option A: paste the SmileHub form embed code inside <div id="booking-embed"> below.
-    Option B: add data-booking-url="https://..." to this <body> tag and every booking CTA
-              becomes a direct link to that URL (no popup).
+    LEAD FORM WIRING
+    The form below mirrors the source page's fields (First Name, Last Name, Email, Phone,
+    Location Preference, consent). Set data-form-action on <form id="lead-form"> to the
+    SmileHub endpoint. Until it is set, submitting shows the phone fallback instead of
+    pretending to succeed. Alternatively add data-booking-url="https://..." to this <body>
+    tag to send every "Book Complimentary Consultation" CTA to an external URL.
   -->
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,7 +56,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
           Call 508-684-2266
         </a>
-        <a id="header-book-consultation" class="btn btn--primary btn--sm" data-conversion="booking" href="#booking-modal" aria-haspopup="dialog">Book Complimentary Consultation</a>
+        <a id="header-book-consultation" class="btn btn--primary btn--sm" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
       </div>
     </div>
   </header>
@@ -66,17 +66,13 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <span class="eyebrow">Airway Orthodontics in Massachusetts</span>
-          <h1 class="hero__title" id="hero-title">Massachusetts&rsquo; <em>Favorite Orthodontists</em></h1>
-          <p class="hero__lead">Harvard-trained specialists for children &amp; adults. Airway orthodontics is more than straightening teeth: it focuses on how the mouth, jaw, and airway work together, leading to easier breathing and better sleep.</p>
-
-          <span class="offer-pill">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            Your first visit is completely complimentary
-          </span>
+          <span class="eyebrow">Trusted Orthodontic Care Across Massachusetts</span>
+          <h1 class="hero__title" id="hero-title">Better Sleep Starts with <em>Better Breathing</em></h1>
+          <p class="hero__lead">Snoring, mouth breathing, or restless nights aren&rsquo;t just inconveniences; they&rsquo;re red flags that your child&rsquo;s health may be at risk. At Carvalho &amp; Roth Orthodontics, our Harvard-trained team provides airway-focused orthodontic care that creates beautiful smiles and improves breathing, sleep, and long-term wellness.</p>
+          <p class="hero__lead">Start with a complimentary consultation and discover how early treatment can give your child peaceful nights, healthy growth, and lasting confidence.</p>
 
           <div class="cta-row hero__ctas">
-            <a id="hero-book-consultation" class="btn btn--primary btn--lg" data-conversion="booking" href="#booking-modal" aria-haspopup="dialog">Book Complimentary Consultation</a>
+            <a id="hero-book-consultation" class="btn btn--primary btn--lg hero__ctas--desktop-hide" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
             <a id="hero-phone" class="btn btn--secondary btn--lg" data-conversion="phone" href="tel:+15086842266">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
               Call 508-684-2266
@@ -84,176 +80,147 @@
           </div>
 
           <ul class="hero__trust" aria-label="Practice highlights">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Harvard-trained doctors</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Harvard-trained team</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Doctor-owned practice</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 convenient MA offices</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Four Massachusetts locations</li>
           </ul>
         </div>
 
-        <div class="hero__visual">
+        <div class="hero__form">
+          <!-- Fields mirror the source landing page form exactly. -->
+          <form id="lead-form" class="lead-card glass lead-form" method="post" action="#lead-form" data-form-action="">
+            <h2 id="form-title">Book Complimentary Consultation</h2>
+            <p>Start with a complimentary consultation.</p>
+            <div class="form-grid">
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+                  <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+                  <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone <span aria-hidden="true">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              </div>
+              <div class="field">
+                <label for="location">Location Preference <span aria-hidden="true">*</span></label>
+                <select id="location" name="location_preference" required>
+                  <option value="" selected disabled>Select an office</option>
+                  <option value="Marlborough">Marlborough</option>
+                  <option value="Northborough">Northborough</option>
+                  <option value="Newton Centre">Newton Centre</option>
+                  <option value="Worcester">Worcester</option>
+                </select>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span>I agree to <a href="https://www.bracesonline.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business.</span>
+              </label>
+              <button id="form-submit" class="btn btn--primary btn--lg" type="submit" data-conversion="form-submit">Book Complimentary Consultation</button>
+              <p id="form-notice" class="form-notice" tabindex="-1" role="status">Online booking is being connected. Please call <a href="tel:+15086842266">508-684-2266</a> to book your complimentary consultation.</p>
+            </div>
+          </form>
+          <!-- The source page also shows a practice video beside the form. Add the video embed here when the file is available. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT THE PRACTICE ================= -->
+    <section class="section section--white" aria-labelledby="about-title">
+      <div class="container split split--media-left">
+        <div class="split__media split__media--natural reveal">
           <picture>
             <source type="image/webp" srcset="assets/images/doctors-hero.webp">
-            <img class="hero__img" src="assets/images/doctors-hero.jpg" width="504" height="493" alt="Dr. Roberto S. Carvalho, Dr. Menachem D. Roth and Dr. Matthew Evers of Carvalho &amp; Roth Orthodontics" fetchpriority="high" decoding="async">
-          </picture>
-          <div class="hero__card glass">
-            <div class="hero__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
-            </div>
-            <div>
-              <strong>Dr. Carvalho, Dr. Roth &amp; Dr. Evers</strong>
-              <span>Orthodontic specialists for children &amp; adults</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= TRUST / VALUE ================= -->
-    <section class="section section--white" aria-labelledby="trust-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why Carvalho &amp; Roth</span>
-          <h2 id="trust-title">Deep expertise with a family-friendly approach</h2>
-          <p>Care that feels supportive, personalized, and designed to improve both health and confidence.</p>
-        </div>
-        <ul class="trust-grid">
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-            <div><h3>Harvard-trained team</h3><p>Dr. Carvalho and Dr. Roth bring Harvard training and decades of combined experience to every patient they meet.</p></div>
-          </li>
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <div><h3>Doctor-owned practice</h3><p>Boutique, doctor-led care from Dr. Roberto S. Carvalho, Dr. Menachem D. Roth, and their staff.</p></div>
-          </li>
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-            <div><h3>Whole-health approach</h3><p>Orthodontics can impact more than appearance. It can support your child&rsquo;s growth, energy, and focus.</p></div>
-          </li>
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><h3>Multiple convenient locations</h3><p>Offices in Marlborough, Northborough, Newton Centre, and Worcester.</p></div>
-          </li>
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
-            <div><h3>Personalized care</h3><p>Treatment plans customized to fit clinical needs and individual lifestyle.</p></div>
-          </li>
-          <li class="trust-card glass reveal">
-            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-            <div><h3>Flexible scheduling &amp; payment</h3><p>Flexible scheduling, transparent communication, and affordable options, including 0% interest payment plans.</p></div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ================= WHY IT MATTERS ================= -->
-    <section class="section section--tint" aria-labelledby="why-title">
-      <div class="container split split--media-left">
-        <div class="split__media reveal">
-          <picture>
-            <source type="image/webp" srcset="assets/images/patient-1.webp">
-            <img src="assets/images/patient-1.jpg" width="720" height="720" alt="A Carvalho &amp; Roth patient holding a sign that reads &ldquo;Rockin&rsquo; my new smile!&rdquo;" loading="lazy" decoding="async">
+            <img src="assets/images/doctors-hero.jpg" width="504" height="493" alt="Dr. Roberto S. Carvalho, Dr. Menachem D. Roth and Dr. Matthew Evers of Carvalho &amp; Roth Orthodontics" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="split__copy reveal">
-          <span class="eyebrow">Why it matters</span>
-          <h2 id="why-title">Every smile tells a bigger story</h2>
-          <p class="lead">For many children and adults, that story includes challenges with breathing, sleep, and overall health. That&rsquo;s why we specialize in airway orthodontics in Massachusetts.</p>
-          <div class="highlight"><p>When the airway is narrow or blocked, it can affect breathing during the day and at night.</p></div>
-          <p>Orthodontic treatments like expanders or braces don&rsquo;t just create space for teeth. They can also create more room for the airway, leading to easier breathing and better sleep.</p>
-          <p>For parents, this means orthodontics can impact more than appearance. It can support your child&rsquo;s growth, energy, and focus. For adults, it can ease health concerns like snoring or sleep apnea.</p>
+          <span class="eyebrow">About the Practice</span>
+          <h2 id="about-title">More than straight teeth</h2>
+          <p class="lead">At Carvalho &amp; Roth Orthodontics, we see orthodontics as more than straight teeth; it&rsquo;s about helping you or your child live healthier, breathe easier, and sleep better.</p>
+          <p>With four convenient locations across Massachusetts, our Harvard-trained, doctor-owned team has been trusted by families for decades. Every visit is consistent and personal; you&rsquo;ll always see the same orthodontist who knows your case inside and out.</p>
+          <div class="highlight"><p>We specialise in airway-focused orthodontics, addressing issues like snoring, mouth breathing, and sleep apnea while delivering the confident smile you deserve.</p></div>
+          <p>By combining advanced training with personalised care, we provide results that make a difference today and last a lifetime.</p>
         </div>
       </div>
     </section>
 
     <!-- ================= WHAT IS AIRWAY ORTHODONTICS ================= -->
-    <section class="section section--white" aria-labelledby="airway-title">
-      <div class="container">
-        <div class="split">
-          <div class="split__copy reveal">
-            <span class="eyebrow">What is airway orthodontics?</span>
-            <h2 id="airway-title">More than straightening teeth</h2>
-            <p class="lead">Airway orthodontics focuses on how the mouth, jaw, and airway work together.</p>
-            <p>Children are often the first to show signs of airway-related concerns, but the symptoms can be easy to miss. Snoring or mouth breathing at night might not seem serious, but these can point to issues with jaw development or airway size.</p>
-            <h3>Signs that can be easy to miss</h3>
-            <ul class="chip-grid" aria-label="Signs of airway-related concerns in children">
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>Snoring at night</li>
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>Mouth breathing</li>
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>Restless sleep</li>
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></svg>Bedwetting</li>
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Trouble concentrating at school</li>
-              <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Daytime fatigue</li>
-            </ul>
-            <p>Airway orthodontics can guide jaw growth in a healthier way. With tools like palatal expanders, we can gently create more space for the airway, helping kids breathe through their nose and sleep more soundly. Parents often notice that after treatment, their child feels more rested, focused, and energetic during the day.</p>
-          </div>
-          <div class="split__media reveal">
-            <picture>
-              <source type="image/webp" srcset="assets/images/patient-2.webp">
-              <img src="assets/images/patient-2.jpg" width="720" height="720" alt="A Carvalho &amp; Roth patient holding a sign that reads &ldquo;No more braces!&rdquo;" loading="lazy" decoding="async">
-            </picture>
+    <section class="section section--tint" aria-labelledby="airway-title">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <span class="eyebrow">What is airway orthodontics?</span>
+          <h2 id="airway-title">Breathing, sleep, and long-term health</h2>
+          <p class="lead">Airway orthodontics focuses on how the development of the jaw, teeth, and airway impacts breathing, sleep, and long-term health.</p>
+          <p>If your child snores, breathes through their mouth, or struggles with restless sleep, these may be signs of airway issues. Left untreated, these problems can affect growth, focus, energy, and overall well-being.</p>
+          <ul class="chip-grid" aria-label="Signs of airway issues">
+            <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>Snoring</li>
+            <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>Mouth breathing</li>
+            <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>Restless sleep</li>
+          </ul>
+          <h3>How we help</h3>
+          <ul class="how-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Improving jaw alignment</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Addressing snoring and mouth breathing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Preventing issues like sleep apnea</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Creating confident, healthy smiles</li>
+          </ul>
+          <div class="cta-row">
+            <a id="airway-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
           </div>
         </div>
-
-        <div class="approach-grid">
-          <article class="approach reveal">
-            <span class="approach__num" aria-hidden="true">1</span>
-            <h3>Palatal expanders</h3>
-            <p>Used mainly in children, expanders gently widen the upper jaw to create more room for teeth and airflow.</p>
-          </article>
-          <article class="approach reveal">
-            <span class="approach__num" aria-hidden="true">2</span>
-            <h3>Mandibular advancement devices</h3>
-            <p>These appliances adjust jaw position to keep the airway open, especially helpful for adults with sleep apnea.</p>
-          </article>
-          <article class="approach reveal">
-            <span class="approach__num" aria-hidden="true">3</span>
-            <h3>Functional appliances</h3>
-            <p>These guide jaw growth in younger patients, supporting both facial balance and breathing.</p>
-          </article>
+        <div class="split__media reveal">
+          <picture>
+            <source type="image/webp" srcset="assets/images/tired-child.webp">
+            <img src="assets/images/tired-child.jpg" width="600" height="600" alt="A tired child resting his head on his hand while doing homework" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
     </section>
 
     <!-- ================= WHY FAMILIES TRUST US ================= -->
-    <section class="section section--tint" aria-labelledby="families-title">
-      <div class="container split">
-        <div class="split__copy reveal">
+    <section class="section section--white" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section-head reveal">
           <span class="eyebrow">Why families trust us</span>
-          <h2 id="families-title">Supportive, personalized care for the whole family</h2>
-          <ul class="reasons">
-            <li class="reason">
-              <div class="reason__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-              <div><strong>Deep expertise</strong><span>Harvard training and decades of combined experience.</span></div>
-            </li>
-            <li class="reason">
-              <div class="reason__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
-              <div><strong>Family-friendly approach</strong><span>Care for children, teens, and adults across Massachusetts.</span></div>
-            </li>
-            <li class="reason">
-              <div class="reason__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-              <div><strong>Transparent communication</strong><span>Flexible scheduling and clear, honest guidance at every step.</span></div>
-            </li>
-            <li class="reason">
-              <div class="reason__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
-              <div><strong>Affordable options</strong><span>0% interest payment plans to make treatment affordable for every family.</span></div>
-            </li>
-          </ul>
+          <h2 id="trust-title">Breathing, sleep, and smile care in one</h2>
         </div>
-        <div class="split__media reveal">
-          <div class="quote-card">
-            <span class="quote-card__mark" aria-hidden="true">&ldquo;</span>
-            <p>We believe in care that feels supportive, personalized, and designed to improve both health and confidence. Parents across Massachusetts trust our team because we combine deep expertise with a family-friendly approach.</p>
-          </div>
-        </div>
+        <ul class="trust-grid trust-grid--4">
+          <li class="trust-card glass reveal">
+            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div><h3>Clinical Expertise</h3><p>Harvard-trained, doctor-owned practice.</p></div>
+          </li>
+          <li class="trust-card glass reveal">
+            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+            <div><h3>Whole Health Approach</h3><p>Breathing, sleep, and smile care in one.</p></div>
+          </li>
+          <li class="trust-card glass reveal">
+            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h3>Convenience</h3><p>Four locations and flexible scheduling.</p></div>
+          </li>
+          <li class="trust-card glass reveal">
+            <div class="trust-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div><h3>Premium Care</h3><p>Personalized plans and flexible payment options.</p></div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ================= MID-PAGE CTA ================= -->
     <section class="cta-band" aria-labelledby="mid-cta-title">
       <div class="container cta-band__inner reveal">
-        <h2 id="mid-cta-title">Your first visit is completely complimentary</h2>
-        <p>Meet with our team, get a full evaluation, and explore your options at no cost and with no obligation.</p>
+        <h2 id="mid-cta-title">Level Up Your Smile Today!</h2>
+        <p>Ready to level up your smile and confidence? Our team is here to help and we can&rsquo;t wait to meet you! Get started with your free consultation.</p>
         <div class="cta-row">
-          <a id="mid-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#booking-modal" aria-haspopup="dialog">Book Complimentary Consultation</a>
+          <a id="mid-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
           <a id="mid-phone" class="btn btn--ghost-light btn--lg" data-conversion="phone" href="tel:+15086842266">Call 508-684-2266</a>
         </div>
       </div>
@@ -263,23 +230,24 @@
     <section class="section section--white" aria-labelledby="doctors-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">About our doctors</span>
-          <h2 id="doctors-title">Meet Dr. Carvalho, Dr. Roth &amp; Dr. Evers</h2>
-          <p>Dr. Roberto S. Carvalho, Dr. Menachem D. Roth, Dr. Matthew Evers, and our staff are dedicated to providing all of our patients across the greater Massachusetts area with professional orthodontic services.</p>
+          <span class="eyebrow">Our Experts</span>
+          <h2 id="doctors-title">About our Doctors</h2>
+          <p>At Carvalho &amp; Roth Orthodontics, Dr. Roberto S. Carvalho, Dr. Menachem D. Roth, and our caring team proudly serve patients across the greater Massachusetts area with exceptional orthodontic care.</p>
+          <p>Together, Dr. Carvalho and Dr. Roth combine advanced training, clinical excellence, and genuine care, ensuring every patient receives personalised treatment and the confidence of a healthier, more beautiful smile.</p>
         </div>
         <div class="doctors">
           <article class="doctor reveal">
             <div class="doctor__photo">
               <picture>
                 <source type="image/webp" srcset="assets/images/dr-carvalho.webp">
-                <img src="assets/images/dr-carvalho.jpg" width="304" height="326" alt="Dr. Roberto S. Carvalho" loading="lazy" decoding="async">
+                <img src="assets/images/dr-carvalho.jpg" width="304" height="326" alt="Dr. Carvalho" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="doctor__body">
-              <h3>Roberto S. Carvalho, D.M.D., PhD</h3>
+              <h3>Dr. Carvalho, D.M.D., PhD</h3>
               <span class="doctor__cred">Harvard School of Dental Medicine</span>
-              <p>Dr. Carvalho graduated from Harvard School of Dental Medicine with a residency in Orthodontics and Dentofacial Orthopedics in conjunction with post-doctoral training in Orthopedics at the Children&rsquo;s Hospital in Boston.</p>
-              <p>In addition, Dr. Carvalho has a Master of Science degree in Craniofacial Growth and Development and a PhD degree in Oral Biology, both from the University of Manitoba in Canada, and a Doctorate of Dental Medicine from Boston University.</p>
+              <p>Dr. Carvalho brings world-class training and expertise to every smile he treats. A graduate of the Harvard School of Dental Medicine with a residency in Orthodontics and dentofacial orthopaedics, he also completed post-doctoral training in Orthopedics at Children&rsquo;s Hospital Boston.</p>
+              <p>He holds advanced degrees in Cranial Growth, Development, and Oral Biology and a Doctorate of Dental Medicine from Boston University.</p>
             </div>
           </article>
           <article class="doctor reveal">
@@ -290,21 +258,21 @@
               </picture>
             </div>
             <div class="doctor__body">
-              <h3>Menachem D. Roth, D.M.D., MMSc</h3>
+              <h3>Dr. Menachem D. Roth, D.M.D., MMSc</h3>
               <span class="doctor__cred">Harvard School of Dental Medicine</span>
-              <p>Dr. Roth graduated from the Harvard School of Dental Medicine with a residency in Orthodontics and a Master of Medical Science in Oral Biology. Prior to his Master&rsquo;s and residency, Dr. Roth earned his Doctorate of Dental Medicine from the University of Pennsylvania School of Dental Medicine.</p>
-              <p>He was recognized throughout his educational career for his outstanding academic performance and has taken part in advanced research related to facial growth, cleft palate issues, and perception of facial aesthetics.</p>
+              <p>Dr. Roth is a highly accomplished orthodontist with a Doctorate of Dental Medicine from the University of Pennsylvania and a residency in Orthodontics at the Harvard School of Dental Medicine, where he also earned his Master of Medical Science in Oral Biology.</p>
+              <p>Recognised for his academic excellence, he has contributed advanced research in facial growth, cleft palate, and facial aesthetics.</p>
             </div>
           </article>
           <article class="doctor reveal">
             <div class="doctor__photo">
               <picture>
                 <source type="image/webp" srcset="assets/images/dr-evers.webp">
-                <img src="assets/images/dr-evers.jpg" width="321" height="371" alt="Dr. Matthew Evers" loading="lazy" decoding="async">
+                <img src="assets/images/dr-evers.jpg" width="624" height="723" alt="Dr. Matthew Evers" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="doctor__body">
-              <h3>Matthew Evers, D.M.D.</h3>
+              <h3>Dr. Matthew Evers, D.M.D.</h3>
               <span class="doctor__cred">Member, American Association of Orthodontists</span>
               <p>Dr. Evers brings a deep commitment to clinical excellence and a patient-centered philosophy to every aspect of his practice. He is dedicated to crafting personalized treatment plans that leverage the latest advancements in orthodontic technology, ensuring each patient receives the highest standard of care with comfort and results always at the forefront.</p>
               <p>Dr. Evers is a member of the American Association of Orthodontists.</p>
@@ -314,129 +282,127 @@
       </div>
     </section>
 
-    <!-- ================= REVIEWS ================= -->
-    <section class="section section--tint" aria-labelledby="reviews-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Patient testimonials</span>
-          <h2 id="reviews-title">Hear real testimonials from actual patients of Dr. Carvalho and Dr. Roth</h2>
-        </div>
-        <div class="reviews">
-          <article class="review glass reveal">
-            <span class="review__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote>We are on our second son at Carvalho &amp; Roth and love their service, professionalism, and the results. The whole team is fantastic and we will be back with our third son in the near future!</blockquote>
-            <footer>Carvalho &amp; Roth patient family</footer>
-          </article>
-          <article class="review glass reveal">
-            <span class="review__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote>We have just completed my daughter&rsquo;s orthodontics with Carvalho and Roth. She was the only one of my 4 children that had braces that went to this practice. The process went smoothly. The appointments were on time. We never waited very long.</blockquote>
-            <footer>Carvalho &amp; Roth patient family</footer>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= FAQ ================= -->
-    <section class="section section--white" aria-labelledby="faq-title">
+    <section class="section section--tint" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Questions</span>
-          <h2 id="faq-title">Frequently asked questions</h2>
+          <h2 id="faq-title">Frequently Asked Questions</h2>
         </div>
         <div class="faq reveal">
           <div class="faq__item">
             <h3 class="faq__q"><button class="faq__btn" id="faq-btn-1" aria-expanded="true" aria-controls="faq-panel-1">
-              What happens at my complimentary first visit?
+              What is airway orthodontics?
               <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button></h3>
             <div class="faq__panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
-              <div class="faq__panel-inner"><p>Your first visit at Carvalho &amp; Roth Orthodontics is completely complimentary. We conduct an initial examination by taking digital photos and X-rays that help diagnose any current or developing orthodontic problems. Once issues are identified, we discuss your options, such as braces and Invisalign.</p></div>
+              <div class="faq__panel-inner"><p>Airway orthodontics focuses on how the development of the jaw, teeth, and airway impacts breathing, sleep, and long-term health. At Carvalho &amp; Roth, we help by improving jaw alignment, addressing snoring and mouth breathing, and preventing issues like sleep apnea, while also creating confident, healthy smiles.</p></div>
             </div>
           </div>
           <div class="faq__item">
             <h3 class="faq__q"><button class="faq__btn" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
-              Can braces help with sleep apnea?
+              How do I know if my child needs airway orthodontics?
               <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button></h3>
             <div class="faq__panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
-              <div class="faq__panel-inner"><p>Braces and other orthodontic treatments can adjust the position of the teeth and jaw, which may open the airway and improve airflow at night. While braces alone don&rsquo;t cure sleep apnea, they can be part of a larger treatment plan to reduce symptoms.</p></div>
+              <div class="faq__panel-inner"><p>If your child snores, breathes through their mouth, or struggles with restless sleep, these may be signs of airway issues. Left untreated, these problems can affect growth, focus, energy, and overall well-being. A complimentary consultation is the best way to find out.</p></div>
             </div>
           </div>
           <div class="faq__item">
             <h3 class="faq__q"><button class="faq__btn" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
-              At what age should my child see an orthodontist?
+              What ages benefit most?
               <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button></h3>
             <div class="faq__panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
-              <div class="faq__panel-inner"><p>The American Association of Orthodontists (AAO) recommends that children see an orthodontist by the time they are seven years old.</p></div>
+              <div class="faq__panel-inner"><p>Airway-focused care helps both children and adults. For children, early treatment can guide healthy growth and give them peaceful nights and lasting confidence. For adults, it addresses issues like snoring, mouth breathing, and sleep apnea while delivering a confident smile.</p></div>
             </div>
           </div>
           <div class="faq__item">
             <h3 class="faq__q"><button class="faq__btn" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4">
-              How long does treatment take?
+              What results can I expect?
               <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button></h3>
             <div class="faq__panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
-              <div class="faq__panel-inner"><p>Treatment varies by a patient&rsquo;s needs, but braces typically work between 6 and 30 months, with additional time needed for wearing a retainer. During treatment, we recommend scheduling an appointment every 4 to 10 weeks.</p></div>
+              <div class="faq__panel-inner"><p>Airway-focused orthodontic care creates beautiful smiles and improves breathing, sleep, and long-term wellness. By combining advanced training with personalised care, we provide results that make a difference today and last a lifetime.</p></div>
             </div>
           </div>
           <div class="faq__item">
             <h3 class="faq__q"><button class="faq__btn" id="faq-btn-5" aria-expanded="false" aria-controls="faq-panel-5">
-              Do you offer payment plans?
+              Is a consultation really free?
               <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button></h3>
             <div class="faq__panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
-              <div class="faq__panel-inner"><p>Yes. We offer several financing options to help make care affordable, including plans with 0% interest.</p></div>
+              <div class="faq__panel-inner"><p>Yes. Your consultation is complimentary. Fill in the form or call <a href="tel:+15086842266">508-684-2266</a> to get started.</p></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="section section--white" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Patient Reviews</span>
+          <h2 id="reviews-title">What families are saying</h2>
+        </div>
+        <div class="reviews">
+          <article class="review glass reveal">
+            <span class="review__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>Carvalho and Roth have been amazing! I&rsquo;ve gone to them for my son&rsquo;s braces and my daughter&rsquo;s palate expander. They&rsquo;re very organized, get you in right away for appointments, and have a very friendly staff.</blockquote>
+            <footer>&mdash; Jacqui Nicolopoulos</footer>
+          </article>
+          <article class="review glass reveal">
+            <span class="review__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>Very good experience here for my husband with Invisalign aligners and now my daughter is starting her orthodontic treatment. Great staff and a convenient office location. Honest pricing, too 👍</blockquote>
+            <footer>&mdash; Tonya Eckert</footer>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ================= LOCATIONS / CONTACT ================= -->
     <section class="section section--tint" id="locations" aria-labelledby="locations-title">
-      <div class="container split">
-        <div class="split__copy reveal">
+      <div class="container">
+        <div class="section-head reveal">
           <span class="eyebrow">Contact our office</span>
           <h2 id="locations-title">Four convenient Massachusetts offices</h2>
-          <ul class="locations">
-            <li class="location">
-              <h3>Marlborough Orthodontic Office</h3>
-              <address>126 Union St.<br>Marlborough, MA 01752</address>
-              <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=126+Union+St.+Marlborough%2C+MA+01752" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
-            </li>
-            <li class="location">
-              <h3>Northborough Orthodontic Office</h3>
-              <address>10010F2 Shops Way<br>Northborough, MA 01532</address>
-              <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=10010F2+Shops+Way+Northborough%2C+MA+01532" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
-            </li>
-            <li class="location">
-              <h3>Newton Centre Orthodontic Office</h3>
-              <address>4 Lyman St.<br>Newton Centre, MA 02459</address>
-              <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=4+Lyman+St.+Newton+Centre%2C+MA+02459" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
-            </li>
-            <li class="location">
-              <h3>Worcester Orthodontic Office</h3>
-              <address>338 Plantation St,<br>Worcester, MA 01604</address>
-              <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=338+Plantation+St+Worcester%2C+MA+01604" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
-            </li>
-          </ul>
-          <div class="contact-box glass">
-            <div class="contact-box__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
-              <div><span>Orthodontic Office</span><a id="contact-phone" data-conversion="phone" href="tel:+15086842266">508-684-2266</a></div>
-            </div>
-            <div class="contact-box__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
-              <div><span>Email</span><a id="contact-email" data-conversion="email" href="mailto:info@bracesonline.com">info@bracesonline.com</a></div>
-            </div>
-          </div>
         </div>
-        <div class="split__media office-photo reveal">
-          <picture>
-            <source type="image/webp" srcset="assets/images/office-northborough.webp">
-            <img src="assets/images/office-northborough.jpg" width="900" height="675" alt="Carvalho &amp; Roth Orthodontics office at 10010F2 Shops Way, Northborough" loading="lazy" decoding="async">
-          </picture>
+        <ul class="locations locations--4">
+          <li class="location reveal">
+            <div class="location__map"><picture><source type="image/webp" srcset="assets/images/map-marlborough.webp"><img src="assets/images/map-marlborough.jpg" width="624" height="227" alt="Map of 126 Union St, Marlborough, MA 01752" loading="lazy" decoding="async"></picture></div>
+            <h3>Marlborough Orthodontic Office</h3>
+            <address>126 Union St.<br>Marlborough, MA 01752</address>
+            <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=126+Union+St.+Marlborough%2C+MA+01752" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
+          </li>
+          <li class="location reveal">
+            <div class="location__map"><picture><source type="image/webp" srcset="assets/images/map-northborough.webp"><img src="assets/images/map-northborough.jpg" width="624" height="227" alt="Map of 10010 Shops Way, Northborough, MA 01532" loading="lazy" decoding="async"></picture></div>
+            <h3>Northborough Orthodontic Office</h3>
+            <address>10010F2 Shops Way<br>Northborough, MA 01532</address>
+            <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=10010F2+Shops+Way+Northborough%2C+MA+01532" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
+          </li>
+          <li class="location reveal">
+            <div class="location__map"><picture><source type="image/webp" srcset="assets/images/map-newton-centre.webp"><img src="assets/images/map-newton-centre.jpg" width="624" height="227" alt="Map of 4 Lyman St, Newton Centre, MA 02459" loading="lazy" decoding="async"></picture></div>
+            <h3>Newton Centre Orthodontic Office</h3>
+            <address>4 Lyman St.<br>Newton Centre, MA 02459</address>
+            <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=4+Lyman+St.+Newton+Centre%2C+MA+02459" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
+          </li>
+          <li class="location reveal">
+            <div class="location__map"><picture><source type="image/webp" srcset="assets/images/map-worcester.webp"><img src="assets/images/map-worcester.jpg" width="624" height="227" alt="Map of 338 Plantation St, Worcester, MA 01604" loading="lazy" decoding="async"></picture></div>
+            <h3>Worcester Orthodontic Office</h3>
+            <address>338 Plantation St,<br>Worcester, MA 01604</address>
+            <a class="location__dir" href="https://www.google.com/maps/search/?api=1&amp;query=338+Plantation+St+Worcester%2C+MA+01604" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden">(opens in a new tab)</span></a>
+          </li>
+        </ul>
+        <div class="contact-box glass reveal">
+          <div class="contact-box__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
+            <div><span>Phone</span><a id="contact-phone" data-conversion="phone" href="tel:+15086842266">508-684-2266</a></div>
+          </div>
+          <div class="contact-box__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+            <div><span>Email</span><a id="contact-email" data-conversion="email" href="mailto:info@bracesonline.com">info@bracesonline.com</a></div>
+          </div>
         </div>
       </div>
     </section>
@@ -444,10 +410,10 @@
     <!-- ================= FINAL CTA ================= -->
     <section class="cta-band" id="final-cta" aria-labelledby="final-cta-title">
       <div class="container cta-band__inner reveal">
-        <h2 id="final-cta-title">Schedule a visit with your Marlborough, Northborough, Newton Centre &amp; Worcester orthodontists today!</h2>
-        <p>At Carvalho &amp; Roth Orthodontics, nothing makes us feel more fulfilled than providing today&rsquo;s top-of-the-line orthodontic treatments and procedures to our patients and their families. Your first visit is completely complimentary.</p>
+        <h2 id="final-cta-title">Better Sleep Starts with Better Breathing</h2>
+        <p>Start with a complimentary consultation and discover how early treatment can give your child peaceful nights, healthy growth, and lasting confidence.</p>
         <div class="cta-row">
-          <a id="final-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#booking-modal" aria-haspopup="dialog">Book Complimentary Consultation</a>
+          <a id="final-book-consultation" class="btn btn--light btn--lg" data-conversion="booking" href="#lead-form">Book Complimentary Consultation</a>
           <a id="final-phone" class="btn btn--ghost-light btn--lg" data-conversion="phone" href="tel:+15086842266">Call Now: 508-684-2266</a>
         </div>
       </div>
@@ -461,7 +427,7 @@
         <img src="assets/images/logo.png" alt="Carvalho &amp; Roth Orthodontics" width="640" height="319" loading="lazy" decoding="async">
       </picture>
       <p>Carvalho &amp; Roth Orthodontics &middot; Specialists for Children &amp; Adults<br>Marlborough &middot; Northborough &middot; Newton Centre &middot; Worcester, MA</p>
-      <p>&copy; Carvalho &amp; Roth Orthodontics. All Rights Reserved.</p>
+      <p>&copy; Carvalho &amp; Roth Orthodontics. All Rights Reserved. &middot; <a href="https://www.bracesonline.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
     </div>
   </footer>
 
@@ -471,29 +437,8 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
       Call Now
     </a>
-    <a id="sticky-book-consultation" class="btn btn--primary" data-conversion="booking" href="#booking-modal" aria-haspopup="dialog">Book Consultation</a>
+    <a id="sticky-book-consultation" class="btn btn--primary" data-conversion="booking" href="#lead-form">Book Consultation</a>
   </nav>
-
-  <!-- ================= BOOKING MODAL ================= -->
-  <div id="booking-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" aria-hidden="true" data-open="false">
-    <div class="modal__backdrop" data-modal-close></div>
-    <div class="modal__panel">
-      <button class="modal__close" type="button" data-modal-close aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-      <h2 id="booking-title">Book Your Complimentary Consultation</h2>
-      <p class="lead">Your first visit at Carvalho &amp; Roth Orthodontics is completely complimentary.</p>
-
-      <!-- Paste the SmileHub "Book Complimentary Consultation" popup form embed code inside this div. -->
-      <div id="booking-embed" class="modal__embed"></div>
-
-      <!-- Shown only until the form embed above is added. -->
-      <div class="modal__fallback">
-        <a id="modal-phone" class="btn btn--primary btn--lg" data-conversion="phone" href="tel:+15086842266">Call 508-684-2266</a>
-        <a id="modal-email" class="btn btn--secondary" data-conversion="email" href="mailto:info@bracesonline.com">Email info@bracesonline.com</a>
-      </div>
-    </div>
-  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
