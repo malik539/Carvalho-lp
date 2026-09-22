@@ -24,7 +24,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap">
 
   <link rel="preload" as="image" href="assets/images/doctors-hero.webp" type="image/webp">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Inline safeguard: keeps the booking popup hidden even if a cached stylesheet is served -->
+  <style>.modal{display:none}.modal[data-open="true"]{display:flex}</style>
+  <link rel="stylesheet" href="assets/css/styles.css?v=202609222140">
   <script>document.documentElement.classList.remove('no-js');</script>
 
   <!-- Google Tag Manager / Google Ads tracking can be inserted here (head) -->
@@ -510,6 +512,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=202609222140" defer></script>
 </body>
 </html>
